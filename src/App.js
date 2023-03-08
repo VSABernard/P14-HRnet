@@ -1,7 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Routes} from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
-// import Homepage from './pages/Homepage/Homepage'
+import CreateEmployee from './pages/CreateEmployee/CreateEmployee'
 
 import './App.css'
 
@@ -15,7 +15,7 @@ const App= () => {
   return (
     <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<Homepage/>} />          */}
+          <Route path="/" element={<CreateEmployee/>} />         
         </Routes>
     </BrowserRouter>    
   )

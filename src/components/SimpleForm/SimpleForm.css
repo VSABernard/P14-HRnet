@@ -1,0 +1,70 @@
+.simpleForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+.simpleFormWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    width: 300px;
+    height: 100%;
+    margin: auto;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.field {
+    height: 20px;
+    width: 280px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.fieldSelect {
+    display: flex;
+    height: 25px;
+    width: 290px;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.address {
+    width: 300px;
+    margin: auto;
+    padding-bottom: 20px;
+    border: 1px solid black;
+}
+
+h3 {
+    margin-left: 30px;
+}
+
+.addressForm  {
+    margin: 10px;
+}
+
+.addressForm .field {
+    width: 260px;
+}
+
+.addressForm .fieldSelect {
+    width: 275px;
+}
+
+.buttonCreateForm {
+    background-color: #44965a;
+    color: white;
+    font-weight: 600;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+}
