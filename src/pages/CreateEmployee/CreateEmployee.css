@@ -11,6 +11,15 @@
     margin: -20px auto 30px;
 }
 
+h1 {
+    color: black;
+}
+
+.currentLink {
+    color: rgb(8, 8, 167);
+    font-weight: 600;
+}
+
 .simpleFormSection {
     display: flex;
     flex-direction: column;

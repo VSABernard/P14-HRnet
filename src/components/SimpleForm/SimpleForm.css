@@ -26,6 +26,7 @@
     border-radius: 5px;
     margin-top: 10px;
     padding-left: 10px;
+    font-size: 16px;    
 }
 
 .fieldSelect {
@@ -35,6 +36,7 @@
     border-radius: 5px;
     margin-top: 10px;
     padding-left: 5px;
+    font-size: 16px;
 }
 
 .address {
@@ -60,11 +62,21 @@ h3 {
     width: 275px;
 }
 
+.buttonSave {
+    margin: auto;
+}
+
 .buttonCreateForm {
     background-color: #44965a;
     color: white;
+    font-size: 16px;
     font-weight: 600;
     height: 30px;
     width: 100px;
     border-radius: 5px;
+}
+
+.buttonCreateForm:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }

@@ -10,10 +10,11 @@ import '../CreateEmployee/CreateEmployee.css'
  * @component
  */
 
-const CreateEmployee = () => {
-    
-    const handleSubmit = () => {
+const CreateEmployee = () => {    
+   
+    const handleSubmit = (employee) => {
         console.log('hande submit called!')
+        console.log('employee : ' + JSON.stringify(employee))
     }
 
     return (
@@ -25,7 +26,7 @@ const CreateEmployee = () => {
                 </Link>
             </header>
             <section className="createEmployeeSection">
-                <SimpleForm className='simpleFormSection' onSubmit={ handleSubmit } submitting="true" />
+                <SimpleForm className='simpleFormSection'  onSubmit={ handleSubmit } submitting="true" />
             </section>
         </div>
     )
