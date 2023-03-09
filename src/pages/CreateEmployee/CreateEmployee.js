@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import HeaderApp from '../../components/Header/Header'
 import SimpleForm from '../../components/SimpleForm/SimpleForm'
 
 import '../CreateEmployee/CreateEmployee.css'
@@ -20,10 +21,12 @@ const CreateEmployee = () => {
     return (
         <div className='createEmployee'>
             <header className='headerCreate'>
-                <h1>HRnet</h1>
-                <Link className="currentLink" to='/CurrentEmployees'>
-                    View Current Employees
-                </Link>
+                < HeaderApp />
+                <div className='link'>
+                    <Link className="currentLink" to='/CurrentEmployees'>
+                        View Current Employees
+                    </Link>
+                </div>
             </header>
             <section className="createEmployeeSection">
                 <SimpleForm className='simpleFormSection'  onSubmit={ handleSubmit } submitting="true" />

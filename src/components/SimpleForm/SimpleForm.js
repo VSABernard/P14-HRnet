@@ -8,6 +8,7 @@ import '../SimpleForm/SimpleForm.css'
 
 let SimpleForm = (props) => {
   const { handleSubmit, submitting, pristine } = props
+  
   return (
     <div className='simpleForm'>
         <h2>Create Employee</h2>
@@ -37,7 +38,10 @@ let SimpleForm = (props) => {
                 </div>
             </div>
             <div className='address'>
-                <h3>Address</h3>
+                <div className='titleAddress'>
+                    <h3>Address</h3>
+                </div>
+                
                 <div className='addressForm'>
                     <label className='label'>Street</label>
                     <div>

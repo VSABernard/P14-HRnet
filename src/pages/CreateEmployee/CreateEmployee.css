@@ -11,13 +11,14 @@
     margin: -20px auto 30px;
 }
 
-h1 {
-    color: black;
+.link:hover {
+    transform: scale(1.1);
 }
 
 .currentLink {
     color: rgb(8, 8, 167);
     font-weight: 600;
+    transform: scale(1.1);
 }
 
 .simpleFormSection {
