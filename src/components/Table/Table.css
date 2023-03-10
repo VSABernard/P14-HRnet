@@ -1,0 +1,42 @@
+.tableEmployees {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    row-gap: 20px;
+    width: 90%;
+    margin: 80px auto;
+    background-color: azure;
+}
+
+.tableSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 40px;
+    width: 100%;
+    row-gap: 20px;
+}
+
+.headerGroup, .dataGroup {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    width: 100%;
+}
+
+.dataBody, .headerList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;    
+}
+
+.headerGroup {
+    text-align: start ;
+}
+
+.dataBody {
+    padding-left: 10px;
+}
+
+.dataList {
+    padding: 0 10px;
+}
