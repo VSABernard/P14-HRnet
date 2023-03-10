@@ -1,0 +1,12 @@
+.paginationNumbreEntries {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-height: 20px;
+    text-align: center;
+}
+
+.filteredFrom {
+    margin-top: 0;
+    margin-left: 5px;
+}

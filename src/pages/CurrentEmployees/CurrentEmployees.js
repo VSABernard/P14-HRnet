@@ -17,11 +17,13 @@ const CurrentEmployees = () => {
 
     return (
         <div className='currentEmployeesSection'>
-            <HeaderApp/>
-            <Table/>
-            <Link className="homeLink" to='/'>
-                Home
-            </Link>
+            <HeaderApp/> 
+            <div className='currentEmployeesBody'>
+                <Table/>
+                <Link className="homeLink" to='/'>
+                    Home
+                </Link>
+            </div>    
         </div>
     )    
 }

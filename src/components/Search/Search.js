@@ -16,12 +16,12 @@ function Search ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
     return (
       <div className='searchSection'>
         <div className='searchText'>Search:{' '}</div>
-        <div className='input'>
+        <div className='inputClass'>
             <input className='searchInput' value={value || ""}
                 onChange={e => { setValue(e.target.value);
                                 onChange(e.target.value);}} 
                 placeholder={``}
-            style={{ fontSize: '1.1rem', border: '0'}}
+            style={{ fontSize: '1.1rem'}}
             />
         </div>
       </div>

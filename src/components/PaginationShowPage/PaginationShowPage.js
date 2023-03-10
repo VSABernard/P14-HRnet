@@ -10,7 +10,7 @@ function PaginationShowPage({ canPreviousPage, canNextPage, nextPage, previousPa
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>
           {'Previous'}
         </button>{' '}
-         <span>
+        <span className='page'>
           <strong>
             {pageIndex + 1}
           </strong>{' '}

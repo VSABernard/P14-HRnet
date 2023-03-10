@@ -2,6 +2,7 @@ import React from 'react'
 import { useTable, useSortBy, useGlobalFilter, usePagination } from 'react-table'
 
 import PaginationShowEntries from '../PaginationShowEntries/PaginationShowEntries'
+import PaginationNumbreEntries from '../PaginationNumbreEntries/PaginationNumbreEntries'
 import PaginationShowPage from '../PaginationShowPage/PaginationShowPage'
 import Search from '../Search/Search'
 
@@ -23,7 +24,7 @@ const TableEmployees = () => {
         { Header: 'Date of Birth', accessor: 'dateOfBirth' },
         { Header: 'Street', accessor: 'street' },
         { Header: 'City', accessor: 'city' },
-        { Header: 'State', accessor: 'state' },
+        { Header: 'State', accessor: 'abbreviation' },
         { Header: 'Zip Code', accessor: 'zipCode' },
     ], [] )
 
@@ -156,6 +157,7 @@ const TableEmployees = () => {
                 </table>
 
                 <div className='pageLine'>
+                    <PaginationNumbreEntries preGlobalFilteredRows={preGlobalFilteredRows} postGlobalFilteredRows={rows} pageIndex={ pageIndex } pageSize={pageSize}/>
                     <PaginationShowPage canPreviousPage={ canPreviousPage } 
                             canNextPage={ canNextPage } nextPage={ nextPage } 
                             previousPage={ previousPage } pageIndex={ pageIndex }/>

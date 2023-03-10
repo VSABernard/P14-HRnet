@@ -1,10 +1,14 @@
+.tableEmployeesSection {
+    width: 95%;
+    margin: 0 auto;
+}
+
 .tableEmployees {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 90%;
-    margin: 80px auto;
-    padding: 40px;
+    margin: 40px auto;
+    padding: 40px 0;
     background-color: azure;
 }
 
@@ -12,21 +16,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    gap: 55%;
 }
 
 .tableSection {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-bottom:  40px;
+    margin-bottom: 40px;
     width: 100%;
     row-gap: 20px;
+    text-align: center;
 }
 
 .headerGroup, .dataGroup {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    width: 100%;
 }
 
 .dataBody, .headerList {
@@ -39,10 +44,28 @@
     text-align: start ;
 }
 
+.dataHeader {
+    height: 20px;
+}
+
 .dataBody {
-    padding-left: 10px;
+    padding: 10px 0;
+    border-top: 1px solid black;
 }
 
 .dataList {
     padding: 0 10px;
+}
+
+.dataGroup {
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.pageLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25%;
+    margin: auto 30px;
 }
