@@ -1,0 +1,13 @@
+.paginationShowEntries {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 30px;
+    height: 25px;
+}
+
+.pageNumber {
+    height: 23px;
+    margin-top: 10px;
+}

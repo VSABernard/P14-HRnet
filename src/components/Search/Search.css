@@ -1,0 +1,26 @@
+.searchSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    height: 25px;
+}
+
+.searchLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.input {
+    margin-top: -3px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.searchInput {
+    height: 20px;
+    color: white;
+    
+}

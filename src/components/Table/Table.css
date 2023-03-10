@@ -1,18 +1,23 @@
 .tableEmployees {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    row-gap: 20px;
     width: 90%;
     margin: 80px auto;
     background-color: azure;
+}
+
+.searchLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .tableSection {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 40px;
+    margin: 0 40px 40px;
     width: 100%;
     row-gap: 20px;
 }
