@@ -1,7 +1,14 @@
 import React from 'react'
-import { useTable, useSortBy } from 'react-table'
+import { useTable, useSortBy, useGlobalFilter } from 'react-table'
+
+import Search from '../Search/Search'
 
 import '../Table/Table.css'
+
+/**
+ * Component React that define the table of employees datas
+ * @returns the employees datas table
+ */
 
 const TableEmployees = () => {
 
@@ -60,23 +67,34 @@ const TableEmployees = () => {
       ], []
     )
 
-    const tableInstance = useTable({ columns, data }, useSortBy)
+    const tableInstance = useTable({ columns, data },  useGlobalFilter, useSortBy )
     
     const {
         getTableProps,
         getTableBodyProps,
+        preGlobalFilteredRows,
+        state,
+        setGlobalFilter,
         headerGroups,
         rows,
         prepareRow,
       } = tableInstance
 
-    // We don't want to render all 2000 rows for this example, so cap
-    // it at 20 for this use case
+    // We don't want to render all 2000 rows, 
+    // so cap it at 20 for this use case
     const firstPageRows = rows.slice(0, 20)
 
     return (
         <div className='tableEmployeesSection'>
             <div className='tableEmployees'>
+                <div className='searchLine'>
+                    <Search
+                    preGlobalFilteredRows={preGlobalFilteredRows}
+                    globalFilter={state.globalFilter}
+                    setGlobalFilter={setGlobalFilter}
+                    />
+                </div>                
+
                 <table className='tableSection' {...getTableProps()}>
                     <thead className='dataHeader'>
                         {// Loop over the header rows

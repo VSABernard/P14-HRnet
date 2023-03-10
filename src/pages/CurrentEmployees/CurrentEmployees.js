@@ -8,6 +8,11 @@ import Table from '../../components/Table/Table'
 
 import '../CurrentEmployees/CurrentEmployees.css'
 
+/**
+ * 
+ * @returns Page of employees datas list
+ */
+
 const CurrentEmployees = () => {   
 
     return (
