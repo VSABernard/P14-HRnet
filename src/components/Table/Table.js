@@ -2,6 +2,7 @@ import React from 'react'
 import { useTable, useSortBy, useGlobalFilter, usePagination } from 'react-table'
 
 import PaginationShowEntries from '../PaginationShowEntries/PaginationShowEntries'
+import PaginationShowPage from '../PaginationShowPage/PaginationShowPage'
 import Search from '../Search/Search'
 
 
@@ -75,12 +76,16 @@ const TableEmployees = () => {
         getTableProps,
         getTableBodyProps,
         preGlobalFilteredRows,
-        state,
+        state: { pageIndex, pageSize, globalFilter },
         setGlobalFilter,
         headerGroups,
         rows,
         prepareRow,
         setPageSize,
+        canPreviousPage, 
+        canNextPage, 
+        nextPage, 
+        previousPage
       } = tableInstance
 
     // We don't want to render all 2000 rows, 
@@ -91,10 +96,10 @@ const TableEmployees = () => {
         <div className='tableEmployeesSection'>
             <div className='tableEmployees'>
                 <div className='searchLine'>
-                    <PaginationShowEntries setPageSize={setPageSize}/>
+                    <PaginationShowEntries setPageSize={setPageSize} pageSize={pageSize}/>
                     <Search
                         preGlobalFilteredRows={preGlobalFilteredRows}
-                        globalFilter={state.globalFilter}
+                        globalFilter={globalFilter}
                         setGlobalFilter={setGlobalFilter} />
                 </div>                
 
@@ -149,6 +154,13 @@ const TableEmployees = () => {
        
                     </tbody>
                 </table>
+
+                <div className='pageLine'>
+                    <PaginationShowPage canPreviousPage={ canPreviousPage } 
+                            canNextPage={ canNextPage } nextPage={ nextPage } 
+                            previousPage={ previousPage } pageIndex={ pageIndex }/>
+                    
+                </div>   
             </div>
         </div>
     )    
