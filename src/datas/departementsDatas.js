@@ -1,7 +1,17 @@
-export const departements = [
-    'Sales',
-    'Marketing',
-    'Engineering',
-    'Human Resources',
-    'Legal'
+export const departementsData = [
+    {
+        "name": "Sales"
+    },
+    {
+        "name": "Marketing"
+    },
+    {
+        "name": "Engineering"
+    },
+    {
+        "name": "Human Resources"
+    },
+    {
+        "name": "Legal"
+    }
 ]

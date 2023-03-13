@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
 // import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
-import { states } from '../../datas/statesDatas'
+import { statesDatas } from '../../datas/statesDatas'
+import { departementsData } from '../../datas/departementsDatas'
 import DatePicker from 'react-multi-date-picker'
 import InputIcon from "react-multi-date-picker/components/input_icon"
 
 import '../SimpleForm/SimpleForm.css'
+
+/**
+ * Component React that displays the create employees form
+ * @param {*} props 
+ * @returns 
+ */
 
 let SimpleForm = (props) => {
     const { handleSubmit, submitting, pristine } = props
@@ -61,7 +68,7 @@ let SimpleForm = (props) => {
                         <Field className='fieldSelectState' name="state" component="select" >
                             <option className='choose'>-- Choose state --</option>
                             {
-                                states.map(state => {
+                                statesDatas.map(state => {
                                     return (<option key={state.abbreviation}>{state.name}</option>)
                                 })                                
                             }
@@ -80,11 +87,11 @@ let SimpleForm = (props) => {
                 <div>
                     <Field className='fieldSelectDepartment' name="departement" component="select">
                             <option className='choose'>-- Choose departement --</option>
-                            <option>Sales</option>
-                            <option>Marketing</option>
-                            <option>Engineering</option>
-                            <option>Human Resources</option>
-                            <option>Legal</option>
+                            {
+                                departementsData.map(departement => {
+                                    return (<option key={departement.name}>{departement.name}</option>)
+                                })                                
+                            }
                     </Field>
                 </div>
             </div>
@@ -101,16 +108,4 @@ SimpleForm = reduxForm({
   form: 'simple'  // a unique identifier for this form
 })(SimpleForm)
 
-// Decorate with connect to read form values
-// const selector = formValueSelector('simple'); // <-- same as form name
-// SimpleForm = connect(state => {
-//     // select values individually
-//     const { firstName, lastName } = selector(state, 'firstName', 'lastName');
-    
-//     return {
-//       fullName: `${firstName || ''} ${lastName || ''}`,
-      
-//     }
-//   })(SimpleForm)
-
-  export default SimpleForm 
+export default SimpleForm 

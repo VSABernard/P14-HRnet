@@ -1,4 +1,4 @@
-export const states = [
+export const statesDatas = [
     {
         "name": "Alabama",
         "abbreviation": "AL"
