@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 // import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import { states } from '../../datas/statesDatas'
-import DatePicker from 'react-datepicker'
+import DatePicker from 'react-multi-date-picker'
+import InputIcon from "react-multi-date-picker/components/input_icon"
 
 import '../SimpleForm/SimpleForm.css'
-import 'react-datepicker/dist/react-datepicker.css'
 
 let SimpleForm = (props) => {
     const { handleSubmit, submitting, pristine } = props
-    const [setStartDate] = useState(new Date())
-    
+    const [ birthDate, setBirthDate ] = useState(new Date())
+    const [ startDate, setStartDate ] = useState(new Date())
   
   return (
     <div className='simpleForm'>
@@ -30,11 +30,13 @@ let SimpleForm = (props) => {
             </div>
             <div className='date'>
                 <label className='label'>Date of birth</label>
-                <DatePicker selected={''} onChange={(date) => setStartDate(date)} showIcon />
+                <DatePicker showIcon selected={birthDate} onChange={(date) => setBirthDate(date)}
+                    format='MM/DD/YYYY' render={<InputIcon/>} />
             </div>
             <div className='date'>
                 <label className='label'>Start date</label>
-                <DatePicker selected={''} onChange={(date) => setStartDate(date)} showIcon />                
+                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}
+                    format='MM/DD/YYYY' render={<InputIcon/>} />                
             </div>
             <div className='address'>
                 <div className='titleAddress'>
