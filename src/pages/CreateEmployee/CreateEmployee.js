@@ -9,6 +9,7 @@ import '../CreateEmployee/CreateEmployee.css'
 /**
  * Component React which displays the create employee's page of the app
  * @component
+ * @returns The create employee's page of the app
  */
 
 const CreateEmployee = () => {    

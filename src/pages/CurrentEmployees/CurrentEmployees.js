@@ -9,8 +9,9 @@ import Table from '../../components/Table/Table'
 import '../CurrentEmployees/CurrentEmployees.css'
 
 /**
- * 
- * @returns Page of employees datas list
+ * Component React which display the page of current employees datas list
+ * @component
+ * @returns The page of current employees datas list
  */
 
 const CurrentEmployees = () => {   

@@ -3,10 +3,10 @@ import React from 'react'
 import '../PaginationShowEntries/PaginationShowEntries.css'
 
 /**
- * Component React that defines the bar of page's entries
+ * Component React that defines the number bar of page's entries rows
  * @param {setPageSize} function Set number of entries
  * @param {pageSize} Number Number of entries by page
- * @returns 
+ * @returns The number bar of page's entries rows
  */
 
 function PaginationShowEntries({setPageSize, pageSize}) {

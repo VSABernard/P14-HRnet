@@ -12,7 +12,7 @@ import '../Table/Table.css'
 
 /**
  * Component React that define the table of employees datas
- * @returns the employees datas table
+ * @returns The employees datas table
  */
 
 const TableEmployees = () => {

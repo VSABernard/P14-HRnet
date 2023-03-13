@@ -10,8 +10,8 @@ import '../SimpleForm/SimpleForm.css'
 
 /**
  * Component React that displays the create employees form
- * @param {*} props 
- * @returns 
+ * @param {props} props 
+ * @returns The create employees form
  */
 
 let SimpleForm = (props) => {

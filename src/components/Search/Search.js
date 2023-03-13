@@ -5,6 +5,9 @@ import '../Search/Search.css'
 
 /**
  * Component React that define a default UI for filtering
+ * @param {globalFilter} 
+ * @param {setGlobalFilter}
+ * @returns A default UI for filtering the current employees datas
  */
 
 function Search ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
