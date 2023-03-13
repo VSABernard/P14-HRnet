@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import { states } from '../../datas/statesDatas'
-
+import DatePicker from 'react-datepicker'
 
 import '../SimpleForm/SimpleForm.css'
+import 'react-datepicker/dist/react-datepicker.css'
 
 let SimpleForm = (props) => {
-  const { handleSubmit, submitting, pristine } = props
+    const { handleSubmit, submitting, pristine } = props
+    const [setStartDate] = useState(new Date())
+    
   
   return (
     <div className='simpleForm'>
@@ -25,17 +28,13 @@ let SimpleForm = (props) => {
                     <Field className='field' name="lastName" component="input" type="text" placeholder="Last Name"/>
                 </div>
             </div>
-            <div>
+            <div className='date'>
                 <label className='label'>Date of birth</label>
-                <div>
-                    <Field className='field' name="dateBirth" component="input" type="text" placeholder="Date of birth"/>             
-                </div>
+                <DatePicker selected={''} onChange={(date) => setStartDate(date)} showIcon />
             </div>
-            <div>
+            <div className='date'>
                 <label className='label'>Start date</label>
-                <div>
-                    <Field className='field' name="startDate" component="input" type="text" placeholder="Start date"/>
-                </div>
+                <DatePicker selected={''} onChange={(date) => setStartDate(date)} showIcon />                
             </div>
             <div className='address'>
                 <div className='titleAddress'>
@@ -57,8 +56,8 @@ let SimpleForm = (props) => {
                 <div className='addressForm'>
                     <label className='label'>State</label>
                     <div>
-                        <Field className='fieldSelect' name="state" component="select" >
-                            <option></option>
+                        <Field className='fieldSelectState' name="state" component="select" >
+                            <option className='choose'>-- Choose state --</option>
                             {
                                 states.map(state => {
                                     return (<option key={state.abbreviation}>{state.name}</option>)
@@ -77,7 +76,8 @@ let SimpleForm = (props) => {
             <div>
                 <label className='label'>Departement</label>
                 <div>
-                    <Field className='fieldSelect' name="departement" component="select">
+                    <Field className='fieldSelectDepartment' name="departement" component="select">
+                            <option className='choose'>-- Choose departement --</option>
                             <option>Sales</option>
                             <option>Marketing</option>
                             <option>Engineering</option>

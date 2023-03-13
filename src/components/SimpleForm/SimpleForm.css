@@ -27,7 +27,7 @@ h2 {
 
 .field {
     height: 20px;
-    width: 280px;
+    width: 285px;
     border: 1px solid black;
     border-radius: 5px;
     margin-top: 10px;
@@ -35,14 +35,36 @@ h2 {
     font-size: 16px;    
 }
 
-.fieldSelect {
-    display: flex;
-    height: 25px;
-    width: 290px;
+.fieldSelect, .fieldSelectDepartment, .fieldSelectState {
+    display: flex;        
     border-radius: 5px;
     margin-top: 10px;
     padding-left: 5px;
     font-size: 16px;
+}
+
+.fieldSelect {
+    height: 20px;
+    width: 263px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.react-datepicker__input-container input {
+    width: 290px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.fieldSelectState {
+    height: 25px;
+    width: 276px;
 }
 
 .address {
@@ -51,12 +73,13 @@ h2 {
     padding-bottom: 20px;
     border: 1px solid black;
 }
+
 .titleAddress {
     width: 80px;
     margin-top: -30px;
     margin-left: 10px;
     padding: 0 10px;
-    background-color: whitesmoke;
+    background-color: azure;
 }
 
 h3 {
@@ -68,11 +91,16 @@ h3 {
 }
 
 .addressForm .field {
-    width: 260px;
+    width: 265px;
 }
 
-.addressForm .fieldSelect {
-    width: 275px;
+.fieldSelectDepartment {
+    height: 25px;
+    width: 290px;
+}
+
+.choose option {
+    font-style: darkgrey;
 }
 
 .buttonSave {
@@ -93,3 +121,4 @@ h3 {
     cursor: pointer;
     transform: scale(1.1);
 }
+
