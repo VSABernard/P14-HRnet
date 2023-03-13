@@ -47,12 +47,13 @@ const TableEmployees = () => {
         canPreviousPage, 
         canNextPage, 
         nextPage, 
-        previousPage
+        previousPage, 
+        page
       } = tableInstance
 
     // We don't want to render all 2000 rows, 
     // so cap it at 20 for this use case
-    const firstPageRows = rows.slice(0, 20)
+    //const firstPageRows = rows.slice(0, 10)
 
     return (
         <div className='tableEmployeesSection'>
@@ -96,7 +97,7 @@ const TableEmployees = () => {
 
                     {/* Apply the table body props */}
                     <tbody className='dataBody' {...getTableBodyProps()}>                        
-                            {firstPageRows.map(                             // Loop over the table rows
+                            {page.map(                             // Loop over the table rows
                                 (row, i) => {
                                 prepareRow(row)                             // Prepare the row for display            
                                 return (
