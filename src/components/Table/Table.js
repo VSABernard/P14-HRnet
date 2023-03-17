@@ -54,6 +54,8 @@ const TableEmployees = () => {
     // We don't want to render all 2000 rows, 
     // so cap it at 20 for this use case
     //const firstPageRows = rows.slice(0, 10)
+    
+    console.log('page:' + page.length)
 
     return (
         <div className='tableEmployeesSection'>
@@ -78,16 +80,17 @@ const TableEmployees = () => {
                                 
                                 // Apply the header cell props
                                 <th className='headerList' {...column.getHeaderProps(column.getSortByToggleProps())}>
-                                    {// Render the header
-                                    column.render('Header')}
-
+                                    <div>
+                                        {// Render the header
+                                        column.render('Header')}
+                                    </div>
                                     {/* Add a sort direction indicator */}
-                                    <span className='iconArrow'>
+                                    <span className='iconArrow'>                                        
                                         {column.isSorted
                                         ? column.isSortedDesc
-                                            ? ' 🔽'
-                                            : ' 🔼'
-                                        : ''}
+                                            ? '▼'
+                                            : '▲'
+                                        :'⇳'}
                                     </span>
                                 </th>
                             ))}
@@ -96,24 +99,31 @@ const TableEmployees = () => {
                     </thead>
 
                     {/* Apply the table body props */}
-                    <tbody className='dataBody' {...getTableBodyProps()}>                        
-                            {page.map(                             // Loop over the table rows
-                                (row, i) => {
-                                prepareRow(row)                             // Prepare the row for display            
-                                return (
-                                    // Apply the row props
-                                    <tr className='dataGroup'{...row.getRowProps()}>                                        
-                                        {row.cells.map(cell => {            // Loop over the rows cells
-                                            // Apply the cell props
-                                            return (
-                                            <td className='dataList' {...cell.getCellProps()}>                                                
-                                                {cell.render('Cell')}       
-                                            </td>
-                                            )
-                                        })}
-                                    </tr>
-                                )}
+                        
+                    <tbody className='dataBody' {...getTableBodyProps()}>  
+                                            
+                        {page.length === 0 && 
+                            <tr>
+                                <td colSpan={9} className='noDataText'>No data available in table</td>
+                            </tr>}       
+
+                        {page.length > 0 && page.map(                             // Loop over the table rows
+                            (row, i) => {
+                            prepareRow(row)                             // Prepare the row for display            
+                            return (
+                                // Apply the row props
+                                <tr className='dataGroup'{...row.getRowProps()}>                                        
+                                    {row.cells.map(cell => {            // Loop over the rows cells
+                                        // Apply the cell props
+                                        return (
+                                        <td className='dataList' {...cell.getCellProps()}>                                                
+                                            {cell.render('Cell')}       
+                                        </td>
+                                        )
+                                    })}
+                                </tr>
                             )}
+                        )}
        
                     </tbody>
                 </table>

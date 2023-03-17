@@ -1,5 +1,5 @@
  export const employeesData = [
-        {
+      {
         id: 1,
         firstName: 'Bob',
         lastName: 'Eponge',
@@ -11,7 +11,7 @@
         state: 'California',
         abbreviation: 'CA',
         zipCode: '12345'
-        },
+        },    
         {
         id: 2,
         firstName: 'Mickey',
@@ -155,4 +155,5 @@
         abbreviation: 'HI',
         zipCode: '54321'
         }
+        
     ]

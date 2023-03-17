@@ -12,7 +12,7 @@ import '../PaginationNumbreEntries/PaginationNumbreEntries.css'
  */
 
 function PaginationNumbreEntries({ preGlobalFilteredRows, postGlobalFilteredRows, pageIndex, pageSize }) {
-  const start =  ( pageIndex  * pageSize ) + 1
+  const start =  postGlobalFilteredRows.length > 0 ? ( pageIndex  * pageSize ) + 1 : 0
   const end = ( postGlobalFilteredRows.length < start + pageSize - 1 ) ? postGlobalFilteredRows.length : start + pageSize - 1
   
   // Render the UI for the table
