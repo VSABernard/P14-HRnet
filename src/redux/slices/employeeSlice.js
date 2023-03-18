@@ -9,7 +9,9 @@ const employeeSlice = createSlice ({
     initialState,
     reducers: { 
         createEmployee: ( state, action ) => {
-            state.employees = { ...state.employees, ...action.payload }
+            console.log('action create employee receive : ' + action.payload)
+            //state.employees = { ...state.employees, ...action.payload }
+            state.employees.push(action.payload)
         }
     }
 })

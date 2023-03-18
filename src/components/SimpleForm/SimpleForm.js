@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-//import { useDispatch } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import { statesDatas } from '../../datas/statesDatas'
 import { departementsData } from '../../datas/departementsDatas'
@@ -30,14 +29,9 @@ const validate = employee => {
     }
     if (!employee.city) {
         errors.city = 'Required'
-      } else if (/^\d{5}$/i.test(employee.zipCode)) {
+      } else if (employee.city.length < 2) {
         errors.city = 'Minimum be 2 characters or more'
-    }
-    if (!employee.zipCode) {
-        errors.zipCode = 'Required'
-      } else if (employee.zipCode.length < 2) {
-        errors.zipCode = 'Minimum be 2 characters or more'
-    }
+    }    
     return errors
 }
 
@@ -59,19 +53,13 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
  * Component React that displays the create employees form
  * @param {props} props 
  * @returns The creation employees form
- */
+ */    
 
-let SimpleForm = (props) => {
+let SimpleForm = (props) => {    
+    
     const { handleSubmit, submitting, pristine } = props
     const [ birthDate, setBirthDate ] = useState(new Date())
-    const [ startDate, setStartDate ] = useState(new Date())
-  
-    // const dispatch = useDispatch()
-
-    // const handleSubmit = (employee) =>
-    //    // e.preventDefault()
-    //    // dispatch(simpleForm())
-    //    alert(JSON.stringify(employee))
+    const [ startDate, setStartDate ] = useState(new Date())       
 
     return (
         <div className='simpleForm'>
@@ -91,12 +79,12 @@ let SimpleForm = (props) => {
                 </div>
                 <div className='date'>
                     <label className='label'>Date of birth</label>
-                    <DatePicker showIcon selected={birthDate} onChange={(date) => setBirthDate(date)}
+                    <DatePicker showIcon selected={birthDate} component={ renderField } onChange={(date) => setBirthDate(date)}
                         format='MM/DD/YYYY' render={<InputIcon/>} />
                 </div>
                 <div className='date'>
                     <label className='label'>Start date</label>
-                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}
+                    <DatePicker selected={startDate} component={ renderField } onChange={(date) => setStartDate(date)}
                         format='MM/DD/YYYY' render={<InputIcon/>} />                
                 </div>
                 <div className='address'>

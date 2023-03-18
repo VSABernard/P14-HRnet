@@ -2,16 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { createStore, combineReducers } from 'redux'
+//import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { reducer as formReducer } from 'redux-form'
+import { store } from './redux/store'
+//import { reducer as formReducer } from 'redux-form'
 import './index.css'
 
-const reducer = combineReducers({
-  form: formReducer, // mounted under "form"
-})
+// const reducer = combineReducers({
+//    form: formReducer, // mounted under "form"
+// })
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+// const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

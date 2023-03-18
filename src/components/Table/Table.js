@@ -16,7 +16,7 @@ import '../Table/Table.css'
  * @returns The employees datas table
  */
 
-const TableEmployees = () => {
+const TableEmployees = ({employees}) => {
 
     const columns = React.useMemo(() =>[
         { Header: 'First Name', accessor: 'firstName' },
@@ -30,8 +30,15 @@ const TableEmployees = () => {
         { Header: 'Zip Code', accessor: 'zipCode' },
     ], [] )
 
-    const data = React.useMemo(() => employeesData, []
+    // Mock 
+    //const data = React.useMemo(() => employeesData, []
+    //)  
+
+    console.table(employees)
+    console.table(employeesData)
+    const data = React.useMemo(() => employees, [employees]
     )
+   
 
     const tableInstance = useTable({ columns, data }, useGlobalFilter, useSortBy, usePagination )
     

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import HeaderApp from '../../components/Header/Header'
 import Table from '../../components/Table/Table'
@@ -16,11 +17,14 @@ import '../CurrentEmployees/CurrentEmployees.css'
 
 const CurrentEmployees = () => {   
 
+    const employees = useSelector(state => state.employeeReducer.employees)
+    //console.log('employees:' + employees)
+
     return (
         <div className='currentEmployeesSection'>
             <HeaderApp/> 
             <div className='currentEmployeesBody'>
-                <Table/>
+                <Table employees={employees}/>
                 <Link className="homeLink" to='/'>
                     Home
                 </Link>
