@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTable, useSortBy, useGlobalFilter, usePagination } from 'react-table'
+import { BsChevronBarDown, BsChevronBarUp, BsChevronBarExpand } from 'react-icons/bs'
 
 import PaginationShowEntries from '../PaginationShowEntries/PaginationShowEntries'
 import PaginationNumbreEntries from '../PaginationNumbreEntries/PaginationNumbreEntries'
@@ -88,9 +89,9 @@ const TableEmployees = () => {
                                     <span className='iconArrow'>                                        
                                         {column.isSorted
                                         ? column.isSortedDesc
-                                            ? '▼'
-                                            : '▲'
-                                        :'⇳'}
+                                            ? <BsChevronBarDown/>
+                                            : <BsChevronBarUp/>
+                                        : <BsChevronBarExpand/>}
                                     </span>
                                 </th>
                             ))}
