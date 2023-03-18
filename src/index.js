@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-import { reducer as reduxFormReducer } from 'redux-form'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+import { reducer as formReducer } from 'redux-form'
+import './index.css'
 
 const reducer = combineReducers({
-  form: reduxFormReducer, // mounted under "form"
+  form: formReducer, // mounted under "form"
 })
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

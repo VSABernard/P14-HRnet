@@ -14,9 +14,10 @@ import '../CreateEmployee/CreateEmployee.css'
 
 const CreateEmployee = () => {    
    
-    const handleSubmit = (employee) => {
-        console.log('hande submit called!')
-        console.log('employee : ' + JSON.stringify(employee))
+    
+    let submit = (values) => {
+        alert("submitted")
+        console.log(values)
     }
 
     return (
@@ -30,7 +31,7 @@ const CreateEmployee = () => {
                 </div>
             </header>
             <section className="createEmployeeSection">
-                <SimpleForm className='simpleFormSection'  onSubmit={ handleSubmit } submitting="true" />
+                <SimpleForm className='simpleFormSection' onSubmit={submit} submitting="true" />
             </section>
         </div>
     )
