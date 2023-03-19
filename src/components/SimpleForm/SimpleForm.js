@@ -1,53 +1,10 @@
-import React, { useState } from 'react'
-import { Field, reduxForm } from 'redux-form'
+import React from 'react'
+import { Field, Form } from 'react-final-form'
 import { statesDatas } from '../../datas/statesDatas'
 import { departementsData } from '../../datas/departementsDatas'
-import DatePicker from 'react-multi-date-picker'
-import InputIcon from "react-multi-date-picker/components/input_icon"
+import RenderDatePicker from '../DatePicker/DatePicker'
 
 import '../SimpleForm/SimpleForm.css'
-
-/**
- * The validation logic
- */
-const validate = employee => {
-    const errors = {}
-    if (!employee.firstName) {
-      errors.firstName = 'Required'
-    } else if (employee.firstName.length < 2) {
-      errors.firstName = 'Minimum be 2 characters or more'
-    }
-    if (!employee.lastName) {
-        errors.lastName = 'Required'
-      } else if (employee.lastName.length < 2) {
-        errors.lastName = 'Minimum be 2 characters or more'
-    }
-    if (!employee.street) {
-        errors.street = 'Required'
-      } else if (employee.street.length < 2) {
-        errors.street = 'Minimum be 2 characters or more'
-    }
-    if (!employee.city) {
-        errors.city = 'Required'
-      } else if (employee.city.length < 2) {
-        errors.city = 'Minimum be 2 characters or more'
-    }    
-    return errors
-}
-
-/**
- * Function to handle the submission process
- */
-
-const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
-    <div>
-      <label className="control-label">{label}</label>
-      <div>
-        <input {...input} placeholder={label} type={type} className="form-control" />
-        {touched && ((error && <span className="text-danger">{error}</span>) || (warning && <span>{warning}</span>))}
-      </div>
-    </div>
-  )
 
 /**
  * Component React that displays the create employees form
@@ -55,38 +12,41 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
  * @returns The creation employees form
  */    
 
-let SimpleForm = (props) => {    
-    
-    const { handleSubmit, submitting, pristine } = props
-    const [ birthDate, setBirthDate ] = useState(new Date())
-    const [ startDate, setStartDate ] = useState(new Date())       
+//const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+/*const onSubmit = async values => {
+    await sleep(300)
+    window.alert(JSON.stringify(values, 0, 2))
+}*/
+
+const SimpleForm = ({onSubmit}) => {    
 
     return (
-        <div className='simpleForm'>
-            <h2>Create Employee</h2>
-            <form className='simpleFormWrapper' onSubmit={ handleSubmit }>    
-                <div>
+    <div className='simpleForm'>
+        <h2>Create Employee</h2>
+        <Form className='simpleFormWrapper' onSubmit={ onSubmit } initialValues={''}
+                render= {({ handleSubmit, form, submitting, pristine, values }) => (    
+            <form onSubmit={handleSubmit}>
+                <div className='name'>
                     <label className='label'>First Name</label>
-                    <div>
-                        <Field className='field' name="firstName" component={ renderField } type="text" placeholder="First Name" />
-                    </div> 
+                    <Field className='fieldName' name="firstName" component='input' type="text" placeholder="First Name" />
                 </div>
-                <div>
+
+                <div className='name'>
                     <label className='label'>Last Name</label>
-                    <div>
-                        <Field className='field' name="lastName" component={ renderField } type="text" placeholder="Last Name"/>
-                    </div>
+                    <Field className='fieldName' name="lastName" component='input' placeholder="Last Name"/>
                 </div>
-                <div className='date'>
-                    <label className='label'>Date of birth</label>
-                    <DatePicker showIcon selected={birthDate} component={ renderField } onChange={(date) => setBirthDate(date)}
-                        format='MM/DD/YYYY' render={<InputIcon/>} />
+
+                <div className='birthDate'>
+                    <label className='label'>Date of Birth</label>
+                    <Field className='fieldDate' name="birthDate" component={ RenderDatePicker } />
                 </div>
-                <div className='date'>
-                    <label className='label'>Start date</label>
-                    <DatePicker selected={startDate} component={ renderField } onChange={(date) => setStartDate(date)}
-                        format='MM/DD/YYYY' render={<InputIcon/>} />                
-                </div>
+                
+                <div className='startDate'>
+                    <label className='label'>Start Date</label>
+                    <Field className='fieldDate' name="startDate" component={ RenderDatePicker }  />
+                </div> 
+
                 <div className='address'>
                     <div className='titleAddress'>
                         <h3>Address</h3>
@@ -94,61 +54,50 @@ let SimpleForm = (props) => {
                     
                     <div className='addressForm'>
                         <label className='label'>Street</label>
-                        <div>
-                            <Field className='field' name="street" component={ renderField } type="text" placeholder="Street"/> 
-                        </div>
+                        <Field className='fieldAdress' name="street" component='input' type="text" placeholder="Street"/> 
                     </div>
                     <div className='addressForm'>
                         <label className='label'>City</label>
-                        <div>
-                            <Field className='field' name="city" component={ renderField } type="text" placeholder="City"/> 
-                        </div>
+                        <Field className='fieldAdress' name="city" component='input' type="text" placeholder="City"/> 
                     </div>
                     <div className='addressForm'>
                         <label className='label'>State</label>
-                        <div>
-                            <Field className='fieldSelectState' name="state" component="select" >
-                                <option className='choose'>-- Choose state --</option>
-                                {
-                                    statesDatas.map(state => {
-                                        return (<option key={state.abbreviation}>{state.name}</option>)
-                                    })                                
-                                }
-                            </Field>
-                        </div>
+                        <Field className='fieldSelectState' name="state" component="select" >
+                            <option className='choose'>-- Choose state --</option>
+                            {
+                                statesDatas.map(state => {
+                                    return (<option key={state.abbreviation}>{state.name}</option>)
+                                })                                
+                            }
+                        </Field>
                     </div>
                     <div className='addressForm'>
                         <label className='label'>Zip Code</label>
-                        <div>
-                            <Field className='field' name="zipCode" component={ renderField } type="text" placeholder="Zip Code"/> 
-                        </div>
+                        <Field className='fieldAdress' name="zipCode" component='input' type="text" placeholder="Zip Code"/> 
                     </div>
                 </div>
+
                 <div>
                     <label className='label'>Departement</label>
-                    <div>
-                        <Field className='fieldSelectDepartment' name="departement" component="select">
-                                <option className='choose'>-- Choose departement --</option>
-                                {
-                                    departementsData.map(departement => {
-                                        return (<option key={departement.name}>{departement.name}</option>)
-                                    })                                
-                                }
-                        </Field>
-                    </div>
+                    <Field className='fieldSelectDepartement' name="departement" component="select">
+                        <option className='choose'>-- Choose departement --</option>
+                        {
+                            departementsData.map(departement => {
+                                return (<option key={departement.name}>{departement.name}</option>)
+                            })                                
+                        }
+                    </Field>
                 </div>
+
                 <div className='buttonSave'>
                     <button className='buttonCreateForm' type="submit" disabled={ pristine || submitting }>Save</button>
                 </div>
+                {/* <pre>{JSON.stringify(values, 0, 2)}</pre> */}
             </form>
-        </div>
-  )
-}
+            )}
+        />
+    </div>
 
-// Decorate with redux-form
-SimpleForm = reduxForm({
-  form: 'simple',               // a unique identifier for this form
-  validate
-})(SimpleForm)
+)}
 
 export default SimpleForm 

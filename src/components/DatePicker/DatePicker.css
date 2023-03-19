@@ -1,0 +1,22 @@
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.rmdp-input {
+    width: 285px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.rmdp-container svg {
+    margin-left: -40px;
+}
+
+.react-date-picker__wrapper {
+    border: 1px solid black;
+    border-radius: 5px;
+}

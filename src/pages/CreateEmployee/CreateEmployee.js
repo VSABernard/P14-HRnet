@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { createEmployee } from '../../redux/slices/employeeSlice'
+
 import HeaderApp from '../../components/Header/Header'
 import SimpleForm from '../../components/SimpleForm/SimpleForm'
 
@@ -28,8 +29,8 @@ const CreateEmployee = () => {
 
         const newEmployee = {...employee}
 
-        newEmployee.dateOfBirth = '03/06/2000'
-        newEmployee.startDate = '03/09/2023'
+        //newEmployee.dateOfBirth = moment(employee.dateOfBirth).format('YYYY-MM-DD')
+        //newEmployee.startDate = moment(employee.startDate).format('YYYY-MM-DD')
         newEmployee.id = Date.now()                    // unique id
         dispatch(createEmployee(newEmployee))
         nav ('/CurrentEmployees')
