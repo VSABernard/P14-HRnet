@@ -75,7 +75,7 @@ h2 {
     margin-top: 10px;
     padding-left: 5px;
     font-size: 14px;
-    border: 1.5px solid black;
+    border: 1.75px solid black;
 }
 
 .fieldSelect {
@@ -88,15 +88,6 @@ h2 {
     width: 276px;
 } 
 
-.fieldSelectDepartement {
-    display: flex;
-    height: 25px;
-    width: 300px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: 1.5px solid black;
-}
-
 input.form-control {
     width: 100%;
     height: 22px;
@@ -108,7 +99,7 @@ input.form-control {
     width: 300px;
     margin: auto;
     padding-bottom: 20px;
-    border: 1px solid black;
+    border: 1.5px solid black;
 }
 
 .titleAddress {
@@ -129,18 +120,28 @@ h3 {
 }
 
 .fieldSelectState {
-    height: 26px;
+    height: 25px;
     width: 285px;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.fieldSelectDepartment {
-    height: 26px;
-    width: 290px;
+.state {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fieldSelectDepartement {
+    display: flex;
+    height: 25px;
+    width: 300px;
     margin-top: 0;
     margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1.75px solid black;
 }
+
 
 .choose option {
     font-style: darkgrey;

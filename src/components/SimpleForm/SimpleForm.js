@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Field, Form } from 'react-final-form'
 import { statesDatas } from '../../datas/statesDatas'
 import { departementsData } from '../../datas/departementsDatas'
+import Modal from '../../librairies/Modal/Modal'
 
 import '../SimpleForm/SimpleForm.css'
 
@@ -11,14 +12,9 @@ import '../SimpleForm/SimpleForm.css'
  * @returns The creation employees form
  */    
 
-//const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-/*const onSubmit = async values => {
-    await sleep(300)
-    window.alert(JSON.stringify(values, 0, 2))
-}*/
-
 const SimpleForm = ({onSubmit}) => {    
+
+    // const [ show, setShow] = useState(false)
 
     return (
     <div className='simpleForm'>
@@ -65,7 +61,10 @@ const SimpleForm = ({onSubmit}) => {
                             <option className='choose'>-- Choose state --</option>
                             {
                                 statesDatas.map(state => {
-                                    return (<option key={state.abbreviation}>{state.name}</option>)
+                                    return (
+                                    <option className='state' key={state.abbreviation}>
+                                        {state.abbreviation} -- {state.name}
+                                    </option>)
                                 })                                
                             }
                         </Field>
@@ -89,12 +88,15 @@ const SimpleForm = ({onSubmit}) => {
                 </div>
 
                 <div className='buttonSave'>
-                    <button className='buttonCreateForm' type="submit" disabled={ pristine || submitting }>Save</button>
-                </div>
-                {/* <pre>{JSON.stringify(values, 0, 2)}</pre> */}
-            </form>
+                    <button className='buttonCreateForm' type="submit" disabled={ pristine || submitting } >
+                        Save
+                    </button> 
+                    {/* <Modal onClose={() => setShow(false)} show={ show }/>                    */}
+                </div>                
+            </form>   
             )}
         />
+        
     </div>
 
 )}
