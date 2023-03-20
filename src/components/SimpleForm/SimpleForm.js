@@ -2,7 +2,6 @@ import React from 'react'
 import { Field, Form } from 'react-final-form'
 import { statesDatas } from '../../datas/statesDatas'
 import { departementsData } from '../../datas/departementsDatas'
-import RenderDatePicker from '../DatePicker/DatePicker'
 
 import '../SimpleForm/SimpleForm.css'
 
@@ -29,22 +28,22 @@ const SimpleForm = ({onSubmit}) => {
             <form onSubmit={handleSubmit}>
                 <div className='name'>
                     <label className='label'>First Name</label>
-                    <Field className='fieldName' name="firstName" component='input' type="text" placeholder="First Name" />
+                    <Field className='fieldName' name="firstName" component='input' type="text"/>
                 </div>
 
                 <div className='name'>
                     <label className='label'>Last Name</label>
-                    <Field className='fieldName' name="lastName" component='input' placeholder="Last Name"/>
+                    <Field className='fieldName' name="lastName" component='input'/>
                 </div>
 
                 <div className='birthDate'>
                     <label className='label'>Date of Birth</label>
-                    <Field className='fieldDate' name="birthDate" component={ RenderDatePicker } />
+                    <Field className='fieldDate' name="birthDate" component='input' type='date' />
                 </div>
                 
                 <div className='startDate'>
                     <label className='label'>Start Date</label>
-                    <Field className='fieldDate' name="startDate" component={ RenderDatePicker }  />
+                    <Field className='fieldDate' name="startDate" component='input' type='date'  />
                 </div> 
 
                 <div className='address'>
@@ -54,11 +53,11 @@ const SimpleForm = ({onSubmit}) => {
                     
                     <div className='addressForm'>
                         <label className='label'>Street</label>
-                        <Field className='fieldAdress' name="street" component='input' type="text" placeholder="Street"/> 
+                        <Field className='fieldAdress' name="street" component='input' type="text"/> 
                     </div>
                     <div className='addressForm'>
                         <label className='label'>City</label>
-                        <Field className='fieldAdress' name="city" component='input' type="text" placeholder="City"/> 
+                        <Field className='fieldAdress' name="city" component='input' type="text"/> 
                     </div>
                     <div className='addressForm'>
                         <label className='label'>State</label>
@@ -73,7 +72,7 @@ const SimpleForm = ({onSubmit}) => {
                     </div>
                     <div className='addressForm'>
                         <label className='label'>Zip Code</label>
-                        <Field className='fieldAdress' name="zipCode" component='input' type="text" placeholder="Zip Code"/> 
+                        <Field className='fieldAdress' name="zipCode" component='input' type="text"/> 
                     </div>
                 </div>
 
