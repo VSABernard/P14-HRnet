@@ -7,7 +7,7 @@ import PaginationNumbreEntries from '../PaginationNumbreEntries/PaginationNumbre
 import PaginationShowPage from '../PaginationShowPage/PaginationShowPage'
 import Search from '../Search/Search'
 
-import { employeesData } from '../../datas/employeesData'
+//import { employeesData } from '../../datas/employeesData'
 
 import '../Table/Table.css'
 
@@ -33,12 +33,11 @@ const TableEmployees = ({employees}) => {
     // Mock 
     //const data = React.useMemo(() => employeesData, []
     //)  
+    // console.table(employees)
+    // console.table(employeesData)
 
-    console.table(employees)
-    console.table(employeesData)
     const data = React.useMemo(() => employees, [employees]
     )
-   
 
     const tableInstance = useTable({ columns, data }, useGlobalFilter, useSortBy, usePagination )
     

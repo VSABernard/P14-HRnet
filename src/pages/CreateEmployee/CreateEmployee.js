@@ -10,7 +10,6 @@ import SimpleForm from '../../components/SimpleForm/SimpleForm'
 
 import '../CreateEmployee/CreateEmployee.css'
 
-
 /**
  * Component React which displays the create employee's page of the app
  * @component
@@ -42,8 +41,8 @@ const CreateEmployee = () => {
 
     let submit = (employee) => {
         const newEmployee = {...employee}
-        newEmployee.id = Date.now()   // unique id
-        newEmployee.state = newEmployee.state.substring(0,2)               
+        newEmployee.id = Date.now()                                     // unique id
+        newEmployee.state = newEmployee.state.substring(0,2)            // cut the state into 2 characters        
         dispatch(createEmployee(newEmployee))
         setShow(true)        
     }  
@@ -66,9 +65,6 @@ const CreateEmployee = () => {
                     }} 
                     show={ show } message={ 'Employee has been created !' }/>  
             </section>
-
-
-
         </div>
     )
 }

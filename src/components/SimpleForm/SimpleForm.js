@@ -3,7 +3,6 @@ import { Field, Form } from 'react-final-form'
 
 import { statesDatas } from '../../datas/statesDatas'
 import { departementsData } from '../../datas/departementsDatas'
-//import Modal from '../../librairies/Modal/Modal'
 
 import '../SimpleForm/SimpleForm.css'
 
@@ -14,8 +13,6 @@ import '../SimpleForm/SimpleForm.css'
  */    
 
 const SimpleForm = ({onSubmit}) => {    
-
-    // const [ show, setShow] = useState(false)
 
     return (
     <div className='simpleForm'>
@@ -92,7 +89,6 @@ const SimpleForm = ({onSubmit}) => {
                     <button className='buttonCreateForm' type="submit" disabled={ pristine || submitting } >
                         Save
                     </button> 
-                    {/* <Modal onClose={() => setShow(false)} show={ show }/>                    */}
                 </div>                
             </form>   
             )}

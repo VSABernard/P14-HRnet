@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import CreateEmployee from './pages/CreateEmployee/CreateEmployee'
 import CurrentEmployees from './pages/CurrentEmployees/CurrentEmployees'
+import Error404 from './pages/Error404/Error404'
 
 import './App.css'
 
@@ -18,6 +19,7 @@ const App= () => {
         <Routes>
           <Route path="/" element={<CreateEmployee/>} />    
           <Route path="/CurrentEmployees" element={<CurrentEmployees/>} />    
+          <Route path="*" element={<Error404/>} />
         </Routes>
     </BrowserRouter>    
   )
