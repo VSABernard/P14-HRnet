@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { createEmployee } from '../../redux/slices/employeeSlice'
 
-import ModalValidate from 'p14-hrnet-modal-validate-plugin/dist/component/ModalValidate'
+import ModalValidate from 'p14-modal-validate-plugin/dist/component/ModalValidate'
 
 import HeaderApp from '../../components/Header/Header'
 import SimpleForm from '../../components/SimpleForm/SimpleForm'
@@ -42,12 +42,11 @@ const CreateEmployee = () => {
 
     let submit = (employee) => {
         const newEmployee = {...employee}
-        newEmployee.id = Date.now()                    // unique id
+        newEmployee.id = Date.now()   // unique id
+        newEmployee.state = newEmployee.state.substring(0,2)               
         dispatch(createEmployee(newEmployee))
         setShow(true)        
-    }
-
-    
+    }  
 
     return (
         <div className='createEmployee'>
@@ -65,7 +64,7 @@ const CreateEmployee = () => {
                     setShow(false)
                     setIsCreated(true)
                     }} 
-                    show={ show }/>  
+                    show={ show } message={ 'Employee has been created !' }/>  
             </section>
 
 
