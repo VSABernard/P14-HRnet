@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100vw;
     margin: auto;
     padding: 40px 0;
     background-color: #579c6a;
@@ -13,7 +12,7 @@
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
-    margin: -20px auto 30px;
+    margin: -30px auto 30px;
     gap: 30px;
 }
 
@@ -46,4 +45,5 @@
 footer {
     margin-top: 20px;
     margin-bottom: -20px;
+    height: 40px;
 }

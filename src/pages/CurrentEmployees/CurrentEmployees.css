@@ -1,16 +1,19 @@
 .currentEmployeesSection {
-    height: 100%;
-    width: auto;
     background-color: #579c6a;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .currentEmployeesBody {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: auto;
     margin: auto;
+}
+
+.tableEmployee {
+    position: relative;
+    width: auto;
 }
 
 .homeLink {
@@ -20,5 +23,5 @@
     text-align: center;
     justify-content: center;
     padding: auto;
-    margin: 5% auto 0;
+    margin: 7% auto 0;
 }

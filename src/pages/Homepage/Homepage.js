@@ -20,7 +20,7 @@ const Homepage = () => {
             <Link className="createLink" to='/CreateEmployees'>
                 Create Employee
             </Link>
-            <FooterApp />
+            <FooterApp className='footerHomepage'/>
       </main>
     </div>
   )

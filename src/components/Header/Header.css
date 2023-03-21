@@ -1,15 +1,17 @@
+.headerCreate {
+    width: 100%;
+}
+
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    width: 100vw;
-    margin-left: 20px;
-    row-gap: 20px;
 }
 
 .logo {
     display: flex;
-    margin: auto;
+    flex: 0.25;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .logo:hover {
@@ -24,10 +26,10 @@
 
 h1 {
     display: flex;
-    flex: 1;
+    flex: 3;
     justify-content: center;
     margin-top: 3%;
-    margin-left: -7.5%;
+    margin-left: -9.5%;
     color: black;
     font-size: 36px;
     font-weight: 800;

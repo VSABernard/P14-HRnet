@@ -1,18 +1,22 @@
 .homepageSection {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
     background-color: #579c6a;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 .homepageMain {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     text-align: center;
     align-content: center;
     margin: auto;
     font-size: 25px;
+    height: auto;
 }
 
 .sentences {
@@ -41,7 +45,7 @@
 }
 
 .createLink {
-    margin-top: 60px;
+    margin-top: 40px;
     color: rgb(8, 8, 167);
     font-size: 14px;
     font-weight: 600;

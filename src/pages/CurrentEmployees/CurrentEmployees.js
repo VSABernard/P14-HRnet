@@ -24,7 +24,7 @@ const CurrentEmployees = () => {
         <div className='currentEmployeesSection'>
             <HeaderApp/> 
             <div className='currentEmployeesBody'>
-                <Table employees={employees}/>
+                <Table className='tableEmployee' employees={employees}/>
                 <Link className="homeLink" to='/'>
                     Home
                 </Link>
