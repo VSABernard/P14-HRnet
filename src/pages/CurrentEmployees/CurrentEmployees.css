@@ -1,12 +1,13 @@
 .currentEmployeesSection {
     background-color: #579c6a;
-    margin: 0 auto;
+    height: auto;
 }
 
 .currentEmployeesBody {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: min-content;
     width: auto;
     margin: auto;
 }

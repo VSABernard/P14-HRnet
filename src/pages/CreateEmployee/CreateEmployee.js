@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { createEmployee } from '../../redux/slices/employeeSlice'
 
-import ModalValidate from 'p14-modal-validate-plugin/dist/component/ModalValidate'
+import ModalValidate from 'p14-modal-validate-plugin'
 
 import HeaderApp from '../../components/Header/Header'
 import SimpleForm from '../../components/SimpleForm/SimpleForm'
