@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Field, Form } from 'react-final-form'
+
 import { statesDatas } from '../../datas/statesDatas'
 import { departementsData } from '../../datas/departementsDatas'
-import Modal from '../../librairies/Modal/Modal'
+//import Modal from '../../librairies/Modal/Modal'
 
 import '../SimpleForm/SimpleForm.css'
 

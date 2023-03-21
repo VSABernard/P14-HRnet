@@ -1,9 +1,4 @@
 import React from 'react'
-// import { useNavigate } from 'react-router-dom'
-// import { useDispatch } from 'react-redux'
-// import { createEmployee } from '../../redux/slices/employeeSlice'
-
-
 import '../Modal/Modal.css'
 
 const Modal = (props) => {    

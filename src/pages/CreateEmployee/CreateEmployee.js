@@ -3,11 +3,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { createEmployee } from '../../redux/slices/employeeSlice'
 
+import ModalValidate from 'p14-hrnet-modal-validate-plugin/dist/component/ModalValidate'
+
 import HeaderApp from '../../components/Header/Header'
 import SimpleForm from '../../components/SimpleForm/SimpleForm'
-import Modal from '../../librairies/Modal/Modal'
 
 import '../CreateEmployee/CreateEmployee.css'
+
 
 /**
  * Component React which displays the create employee's page of the app
@@ -30,7 +32,7 @@ const CreateEmployee = () => {
         let goToCurrentEmployees = () => {
             nav ('/CurrentEmployees')
         }
-        
+
         if(isCreated){
             goToCurrentEmployees()
         }        
@@ -59,7 +61,7 @@ const CreateEmployee = () => {
             </header>
             <section className="createEmployeeSection">
                 <SimpleForm className='simpleFormSection' onSubmit={submit} submitting="true" />
-                <Modal onClose={() => {
+                < ModalValidate onClose={() => {
                     setShow(false)
                     setIsCreated(true)
                     }} 
