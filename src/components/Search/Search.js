@@ -18,15 +18,15 @@ function Search ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
   
     return (
       <div className='searchSection'>
-        <div className='searchText'>Search:{' '}</div>
-        <div className='inputClass'>
-            <input className='searchInput' value={value || ""}
+        <form className='inputClass'>
+            <label className='searchLabel'>Search:</label>
+            <input className='searchInput' aria-label='Search' value={value || ""}
                 onChange={e => { setValue(e.target.value);
                                 onChange(e.target.value);}} 
                 placeholder={``}
             style={{ fontSize: '1.1rem'}}
             />
-        </div>
+        </form>
       </div>
     )
   }

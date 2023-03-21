@@ -13,9 +13,14 @@
     justify-content: flex-start;
 }
 .searchInput {
-    margin-top: -20px;
+    margin-top: -5px;
     height: 25px;
     border: 1px solid black;
     border-radius: 5px;
     color: black;
+}
+
+.inputClass {
+    display: flex;
+    flex-direction: row;
 }
