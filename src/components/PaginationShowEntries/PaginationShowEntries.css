@@ -4,7 +4,13 @@
     justify-content: space-around;
     gap: 10px;
     margin-bottom: 30px;
+    margin-left: -20px;
     height: 25px;
+}
+
+.paginationShowEntries p {
+    color: black;
+    font-size: 16px;
 }
 
 .pageNumber {

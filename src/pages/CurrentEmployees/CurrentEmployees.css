@@ -1,5 +1,5 @@
 .currentEmployeesSection {
-    height: auto;
+    height: 100%;
     width: auto;
     background-color: #579c6a;
     margin: auto;
@@ -20,5 +20,5 @@
     text-align: center;
     justify-content: center;
     padding: auto;
-    margin: 40px auto;
+    margin: 5% auto 0;
 }

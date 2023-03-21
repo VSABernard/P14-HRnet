@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import HeaderApp from '../../components/Header/Header'
 import Table from '../../components/Table/Table'
-
+import FooterApp from '../../components/Footer/Footer'
 // import { data } from '../../datas/employeesData'
 
 import '../CurrentEmployees/CurrentEmployees.css'
@@ -28,7 +28,8 @@ const CurrentEmployees = () => {
                 <Link className="homeLink" to='/'>
                     Home
                 </Link>
-            </div>    
+            </div>  
+            <FooterApp className='footerCurrent' />
         </div>
     )    
 }

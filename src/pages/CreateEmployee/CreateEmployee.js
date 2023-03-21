@@ -7,6 +7,7 @@ import ModalValidate from 'p14-modal-validate-plugin/dist/component/ModalValidat
 
 import HeaderApp from '../../components/Header/Header'
 import SimpleForm from '../../components/SimpleForm/SimpleForm'
+import FooterApp from '../../components/Footer/Footer'
 
 import '../CreateEmployee/CreateEmployee.css'
 
@@ -65,6 +66,7 @@ const CreateEmployee = () => {
                     }} 
                     show={ show } message={ 'Employee has been created !' }/>  
             </section>
+            <FooterApp className='footerCreate' />
         </div>
     )
 }

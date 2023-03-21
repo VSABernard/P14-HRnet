@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import HeaderApp from '../../components/Header/Header'
+import FooterApp from '../../components/Footer/Footer'
 import hrLogo from '../../assets/rh_logo.png'
 
 import '../Homepage/Homepage.css'
@@ -19,6 +20,7 @@ const Homepage = () => {
             <Link className="createLink" to='/CreateEmployees'>
                 Create Employee
             </Link>
+            <FooterApp />
       </main>
     </div>
   )
