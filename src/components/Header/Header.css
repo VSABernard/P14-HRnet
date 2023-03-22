@@ -20,8 +20,7 @@
 }
 
 .logo img {
-    aspect-ratio: 1/1;
-    height: 90px;
+    aspect-ratio: initial;
     width: 100px;
 }
 

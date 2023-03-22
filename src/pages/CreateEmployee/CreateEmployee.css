@@ -21,9 +21,13 @@
 }
 
 .currentLink {
-    color: rgb(8, 8, 167);
+    color: rgb(12, 12, 99);
     font-weight: 600;
     transform: scale(1.1);
+}
+
+.currentLink:hover {
+    color: rgb(8, 8, 167);
 }
 
 .simpleFormSection {

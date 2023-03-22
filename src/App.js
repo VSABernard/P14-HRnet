@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
-import Homepage from './pages/Homepage/Homepage'
 import CreateEmployee from './pages/CreateEmployee/CreateEmployee'
 import CurrentEmployees from './pages/CurrentEmployees/CurrentEmployees'
 import Error404 from './pages/Error404/Error404'
@@ -18,8 +17,7 @@ const App= () => {
   return (
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage/>} />    
-          <Route path="/CreateEmployees" element={<CreateEmployee/>} />
+          <Route path="/" element={<CreateEmployee/>} />
           <Route path="/CurrentEmployees" element={<CurrentEmployees/>} />    
           <Route path="*" element={<Error404/>} />
         </Routes>

@@ -21,23 +21,23 @@ const SimpleForm = ({onSubmit}) => {
                 render= {({ handleSubmit, form, submitting, pristine, values }) => (    
             <form onSubmit={handleSubmit}>
                 <div className='name'>
-                    <label className='label'>First Name</label>
-                    <Field className='fieldName' name="firstName" component='input' type="text"/>
+                    <label className='label' aria-label='firstName'>First Name</label>
+                    <Field className='fieldName' name="firstName" aria-label='firstName' component='input' type="text"/>
                 </div>
 
                 <div className='name'>
-                    <label className='label'>Last Name</label>
-                    <Field className='fieldName' name="lastName" component='input'/>
+                    <label className='label' aria-label='lastName'>Last Name</label>
+                    <Field className='fieldName' name="lastName" aria-label='lastName' component='input'/>
                 </div>
 
                 <div className='birthDate'>
-                    <label className='label'>Date of Birth</label>
-                    <Field className='fieldDate' name="birthDate" component='input' type='date' />
+                    <label className='label' aria-label='birth'>Date of Birth</label>
+                    <Field className='fieldDate' name="birthDate" aria-label='birth' component='input' type='date' />
                 </div>
                 
                 <div className='startDate'>
-                    <label className='label'>Start Date</label>
-                    <Field className='fieldDate' name="startDate" component='input' type='date'  />
+                    <label className='label' aria-label='start'>Start Date</label>
+                    <Field className='fieldDate' name="startDate" aria-label='start' component='input' type='date'  />
                 </div> 
 
                 <div className='address'>
@@ -46,15 +46,15 @@ const SimpleForm = ({onSubmit}) => {
                     </div>
                     
                     <div className='addressForm'>
-                        <label className='label'>Street</label>
-                        <Field className='fieldAdress' name="street" component='input' type="text"/> 
+                        <label className='label' aria-label='street'>Street</label>
+                        <Field className='fieldAdress' name="street" aria-label='street' component='input' type="text"/> 
                     </div>
                     <div className='addressForm'>
-                        <label className='label'>City</label>
-                        <Field className='fieldAdress' name="city" component='input' type="text"/> 
+                        <label className='label' aria-label='city'>City</label>
+                        <Field className='fieldAdress' name="city" aria-label='city' component='input' type="text"/> 
                     </div>
                     <div className='addressForm'>
-                        <label className='label'>State</label>
+                        <label className='label' aria-label='state'>State</label>
                         <Field className='fieldSelectState' name="state" component="select" >
                             <option className='choose'>-- Choose state --</option>
                             {
@@ -68,13 +68,13 @@ const SimpleForm = ({onSubmit}) => {
                         </Field>
                     </div>
                     <div className='addressForm'>
-                        <label className='label'>Zip Code</label>
-                        <Field className='fieldAdress' name="zipCode" component='input' type="text"/> 
+                        <label className='label' aria-label='zipCode'>Zip Code</label>
+                        <Field className='fieldAdress' name="zipCode" aria-label='zipCode' component='input' type="text"/> 
                     </div>
                 </div>
 
                 <div>
-                    <label className='label'>Departement</label>
+                    <label className='label' aria-label='departement'>Departement</label>
                     <Field className='fieldSelectDepartement' name="departement" component="select">
                         <option className='choose'>-- Choose departement --</option>
                         {
