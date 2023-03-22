@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { createEmployee } from '../../redux/slices/employeeSlice'
 
@@ -19,24 +19,7 @@ import '../CreateEmployee/CreateEmployee.css'
 
 const CreateEmployee = () => {  
 
-    /**
-     * The hook that comes with React Router that will allow us to use the browser’s History API.
-     */
-    const nav = useNavigate()
-
     const [ show, setShow] = useState(false)
-    const [ isCreated, setIsCreated] = useState(false)
-
-    useEffect(() => {
-
-        let goToCurrentEmployees = () => {
-            nav ('/CurrentEmployees')
-        }
-
-        if(isCreated){
-            goToCurrentEmployees()
-        }        
-    },[nav, isCreated])
 
     const dispatch = useDispatch()
 
@@ -87,7 +70,6 @@ const CreateEmployee = () => {
                 <SimpleForm className='simpleFormSection' onSubmit={submit} submitting="true" />
                 < ModalValidate onClose={() => {
                     setShow(false)
-                    setIsCreated(true)
                     }} 
                     show={ show } message={ 'Employee has been created !' }/>  
             </section>

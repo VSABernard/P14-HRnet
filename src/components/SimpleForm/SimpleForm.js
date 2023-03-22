@@ -13,13 +13,21 @@ import '../SimpleForm/SimpleForm.css'
  */    
 
 const SimpleForm = ({onSubmit}) => {    
-
+    
     return (
     <div className='simpleForm'>
         <h2>Create Employee</h2>
+
         <Form className='simpleFormWrapper' onSubmit={ onSubmit } initialValues={''}
-                render= {({ handleSubmit, form, submitting, pristine, values }) => (    
-            <form onSubmit={handleSubmit}>
+                render= {({ handleSubmit, reset, form, submitting, pristine, values }) => (   
+                     
+            /** 
+             * Reset form after form submission succeed
+            */
+            <form onSubmit={ async event => {
+                    await handleSubmit(event)
+                    form.reset()
+                    }}>
                 <div className='name'>
                     <label className='label' aria-label='firstName'>First Name</label>
                     <Field className='fieldName' name="firstName" aria-label='firstName' component='input' type="text"/>
@@ -93,9 +101,8 @@ const SimpleForm = ({onSubmit}) => {
             </form>   
             )}
         />
-        
     </div>
-
-)}
+    )
+}
 
 export default SimpleForm 
