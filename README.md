@@ -58,7 +58,7 @@ Here is the [current HRnet repo](https://github.com/OpenClassrooms-Student-Cente
     
     To compare, do one for the current jQuery HRnet application, then another once the application and the chosen jQuery plugin are converted to React.
     
-  Once the HRnet application in React is working, we need to publish the React component on npm as a package and share the link so that we can use it if necessary.
+  Once the HRnet application in React is working, we need to publish the React component on npm as a package and share [the link](https://github.com/VSABernard/p14-hrnet-modal-plugin.git) so that we can use it if necessary.
   
 ## **_Install the app_**
 1. Fork and clone [this repository](https://github.com/VSABernard/P14-HRnet.git). 
