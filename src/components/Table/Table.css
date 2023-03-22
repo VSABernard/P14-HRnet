@@ -16,7 +16,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 55%;
+    width: 80%;
+    gap: 45%;
+    margin: auto;
 }
 
 .tableSection {
