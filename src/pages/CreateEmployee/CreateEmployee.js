@@ -42,17 +42,11 @@ const CreateEmployee = () => {
         
         let newDate = new Date(date)
 
-        let year = newDate.toLocaleString("default", { year: "numeric" });
-        let month = newDate.toLocaleString("default", { month: "2-digit" });
-        var day = newDate.toLocaleString("default", { day: "2-digit" });
-        
-        console.log(year)
-        console.log(month)
-        console.log(day)
-        
-        const formatDate = day+"/"+month+"/"+year
-        console.log(formatDate)
-    
+        let year = newDate.toLocaleString("default", { year: "numeric" })
+        let month = newDate.toLocaleString("default", { month: "2-digit" })
+        var day = newDate.toLocaleString("default", { day: "2-digit" })
+                
+        const formatDate = day+"/"+month+"/"+year    
         return formatDate
     }
 

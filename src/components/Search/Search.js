@@ -21,8 +21,8 @@ function Search ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
         <form className='inputClass'>
             <label className='searchLabel'>Search:</label>
             <input className='searchInput' aria-label='Search' value={value || ""}
-                onChange={e => { setValue(e.target.value);
-                                onChange(e.target.value);}} 
+                onChange={e => { setValue(e.target.value)
+                                onChange(e.target.value)}} 
                 placeholder={``}
             style={{ fontSize: '1.1rem'}}
             />

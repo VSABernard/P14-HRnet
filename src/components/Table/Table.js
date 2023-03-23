@@ -62,8 +62,6 @@ const TableEmployees = ({employees}) => {
     // so cap it at 20 for this use case
     //const firstPageRows = rows.slice(0, 10)
     
-    console.log('page:' + page.length)
-
     return (
         <div className='tableEmployeesSection'>
             <div className='tableEmployees'>

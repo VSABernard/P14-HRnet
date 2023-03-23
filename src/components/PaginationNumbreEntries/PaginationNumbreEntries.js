@@ -4,7 +4,7 @@ import '../PaginationNumbreEntries/PaginationNumbreEntries.css'
 
 /**
  * Component React which displays the number of entries' pagination in the current employees' table
- * @param {preGlobalFilteredRows} param0 
+ * @param {preGlobalFilteredRows} 
  * @param {postGlobalFilteredRows}
  * @param {pageIndex}
  * @param {pageSize}

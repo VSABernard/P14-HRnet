@@ -11,7 +11,7 @@ const persistConfig = {
     storage,
 }
 const reducer = combineReducers({
-    form: formReducer, // mounted under "form"
+    form: formReducer,                  // mounted under "form"
     employeeReducer : employeeReducer,
 })
 

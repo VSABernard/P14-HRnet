@@ -18,7 +18,6 @@ import '../CurrentEmployees/CurrentEmployees.css'
 const CurrentEmployees = () => {   
 
     const employees = useSelector(state => state.employeeReducer.employees)
-    //console.log('employees:' + employees)
 
     return (
         <div className='currentEmployeesSection'>
